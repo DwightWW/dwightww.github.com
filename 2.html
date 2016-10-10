@@ -5,6 +5,14 @@
 <title>无标题文档</title>
 <script>
 	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(function(ev){
+			var msg=ev.coords
+			alert(msg.longitude);
+			alert(msg.latitude);
+			console.log(ev.coorde);
+		},function(ev){
+			alert('失败');
+		})
 		navigator.geolocation.wachPosition(function(ev){
 			var msg=ev.coords;
 			for(var name in msg){
