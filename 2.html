@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+	if(navigator.geolocation){
+		navigator.geolocation.wachPosition(function(ev){
+			var msg=ev.coords;
+			for(var name in msg){
+				document.write(name+':'+msg[name]+'<br>');
+			}
+		},function(ev){
+			alert('失败');
+		})
+	}else{
+		alert('不支持');
+	}
+</script>
+</head>
+
+<body>
+</body>
+</html>
