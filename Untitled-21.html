@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="yes" name="apple-touch-fullscreen"/> 
+<title>无标题文档</title>
+<style>
+#div1{ width:200px; height:200px; position:absolute; left:0; top:0; background:red; }
+#div2{ width:200px; height:200px; position:absolute; left:300px; top:0; background:green; }
+</style>
+<script>
+function drge(id){
+	var oDiv=document.getElementById(id);
+	var x=0;
+	var y=0;
+	oDiv.addEventListener('touchstart',function (ev){
+		var disX=ev.targetTouches[0].pageX-x;
+		var disY=ev.targetTouches[0].pageY-y;
+		function move(ev){
+			x=ev.targetTouches[0].pageX-disX;
+			y=ev.targetTouches[0].pageY-disY;
+			oDiv.style.transform='translate('+x+'px,'+y+'px)';
+		};
+		function end(){
+			document.removeEventListener('touchmove',move,false);
+			document.removeEventListener('touchend',end,false);
+		};
+		document.addEventListener('touchmove',move,false);
+		document.addEventListener('touchend',end,false);
+		ev.preventDefault();
+	},false);
+}
+window.onload=function (){
+	drge('div1');
+	drge('div2');
+};
+</script>
+</head>
+
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+</body>
+</html>
