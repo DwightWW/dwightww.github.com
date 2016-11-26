@@ -1,2 +1,0 @@
-# dwightww.github.com
-DEMO
