@@ -3,6 +3,7 @@
 	margin:0;
 	list-style: none;
 	text-decoration: none;
+	color:#272536;
 }
 img{
 	display: block;
@@ -57,20 +58,16 @@ header{
 	text-align:center;
 }
 /*svg*/
-.svg{
+section.svg{
 	width:75rem;
 	height:29rem;
 	background:#fafafa;
-	overflow: hidden;	
-}
-.svg ul{
-	overflow: hidden;
-	padding-top:8rem;	
 }
 .svg ul li{
-	float:left;	
 	text-align:center;
 	font-size:2.2rem;
+	background:#fafafa;
+	height:22rem;
 }
 p{
 	height:3.6rem;
@@ -79,8 +76,8 @@ p{
 .active .intr-svg .st0 {
 	fill:red;
 }
-.col{
-	color:red;	
+.active .col{
+	color:red;
 }
 .intr-svg {
 	width: 16.5rem;
